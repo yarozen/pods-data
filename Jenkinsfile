@@ -74,7 +74,7 @@ spec:
                     --verbosity debug \
                     --insecure \
                     --skip-tls-verify \
-                    --destination yarozen/pods-data${BUILD_NUMBER} \
+                    --destination yarozen/pods-data:${BUILD_NUMBER} \
                     --destination yarozen/pods-data:latest
                 """
               }
