@@ -2,5 +2,5 @@ import kubernetes
 import time
 
 while True:
-    print("test1")
+    print("test2")
     time.sleep(10)
