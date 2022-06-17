@@ -39,9 +39,9 @@ spec:
     command:
     - /busybox/cat
     tty: true
-    #volumeMounts:
-    #  - name: jenkins-docker-cfg
-    #    mountPath: /kaniko/.docker
+    volumeMounts:
+      - name: jenkins-docker-cfg
+        mountPath: /kaniko/.docker
   volumes:
   - name: jenkins-docker-cfg
     projected:
@@ -74,8 +74,8 @@ spec:
                     --verbosity debug \
                     --insecure \
                     --skip-tls-verify \
-                    --destination dockername/myapp:v0.1.0 \
-                    --destination dockername/myapp:latest
+                    --destination yarozen/pods-data:${env.BUILD_ID} \
+                    --destination yarozen/pods-data:latest
                 '''
               }
             }
