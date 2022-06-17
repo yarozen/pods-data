@@ -67,16 +67,16 @@ spec:
           steps {
             container(name: 'kaniko', shell: '/busybox/sh') {
               withEnv(['PATH+EXTRA=/busybox']) {
-                sh '''#!/busybox/sh -xe
+                sh """#!/busybox/sh -xe
                   /kaniko/executor \
                     --dockerfile Dockerfile \
                     --context `pwd`/ \
                     --verbosity debug \
                     --insecure \
                     --skip-tls-verify \
-                    --destination yarozen/pods-data:0.0.1 \
+                    --destination yarozen/pods-data${BUILD_NUMBER} \
                     --destination yarozen/pods-data:latest
-                '''
+                """
               }
             }
           }
