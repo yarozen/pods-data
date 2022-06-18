@@ -1,6 +1,6 @@
 from kubernetes import client, config
 
-config.incluster_config()
+config.load_incluster_config()
 v1 = client.CoreV1Api()
 
 while True:
